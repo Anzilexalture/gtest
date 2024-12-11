@@ -2,33 +2,31 @@ import type { Config } from "@canva/app-components";
 
 type ContainerTypes = "folder";
 export const config: Config<ContainerTypes> = {
-  serviceName: "Example App",
+  serviceName: "Google map",
   search: {
     enabled: true,
+    placeholder:"Search places",
     filterFormConfig: {
-      containerTypes: ["folder"],
+      
       filters: [
         {
-          filterType: "CHECKBOX",
-          label: "File Type",
-          key: "fileType",
+          filterType: "RADIO",
+          label: "Services",
+          key: "services",
           options: [
-            { value: "hotel", label: "HOTEL" },
-            { value: "hospital", label: "HOSPITAL" },
-            { value: "school", label: "SCHOOL" },
-
-          ],
-          allowCustomValue: true,
+            { value: "hotels", label: "Hotels" },
+            { value: "restaurants", label: "Restaurants" },
+            { value: "hospital", label: "Hospital" },
+            { value: "school", label: "School" },
+            { value: "atms", label: "ATMs" },
+            { value: "petrol", label: "Petrol" },
+            { value: "post", label: "Post" },
+          ]
         },
+       
       ],
     },
   },
-  
-  containerTypes: [
-  ],
-
   layouts: ["FULL_WIDTH"],
-  resourceTypes: ["EMBED"],
-  moreInfoMessage:
-    "Map implementation.",
+  resourceTypes: ["EMBED"]
 };
